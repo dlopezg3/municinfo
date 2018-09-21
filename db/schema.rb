@@ -10,10 +10,59 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_21_213831) do
+ActiveRecord::Schema.define(version: 2018_09_21_233526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "departamentos", force: :cascade do |t|
+    t.string "nombre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "deudas", force: :cascade do |t|
+    t.string "periodo"
+    t.bigint "municipio_id"
+    t.string "tipo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["municipio_id"], name: "index_deudas_on_municipio_id"
+  end
+
+  create_table "gastos", force: :cascade do |t|
+    t.string "periodo"
+    t.bigint "municipio_id"
+    t.string "tipo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["municipio_id"], name: "index_gastos_on_municipio_id"
+  end
+
+  create_table "ingresos", force: :cascade do |t|
+    t.string "periodo"
+    t.bigint "municipio_id"
+    t.string "tipo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["municipio_id"], name: "index_ingresos_on_municipio_id"
+  end
+
+  create_table "municipios", force: :cascade do |t|
+    t.string "nombre"
+    t.bigint "departamento_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["departamento_id"], name: "index_municipios_on_departamento_id"
+  end
+
+  create_table "poblacions", force: :cascade do |t|
+    t.string "periodo"
+    t.bigint "municipio_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["municipio_id"], name: "index_poblacions_on_municipio_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +76,9 @@ ActiveRecord::Schema.define(version: 2018_09_21_213831) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "deudas", "municipios"
+  add_foreign_key "gastos", "municipios"
+  add_foreign_key "ingresos", "municipios"
+  add_foreign_key "municipios", "departamentos"
+  add_foreign_key "poblacions", "municipios"
 end
