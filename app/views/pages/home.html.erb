@@ -1,2 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner banner-landing <%#= "banner-landing" if controller_name == "pages" %>">
+  <div class="banner-content">
+    <div class="moto">
+      <h1> Encuentre información financiera de los <br> municipios de colombia </h1>
+      <h5> Seleccione el departamento que desea consultar </h5>
+    </div>
+    <div class="container center-div">
+      <%= render "shared/search-form", departamentos: Departamento.all %>
+    </div>
+  </div>
+</div>
