@@ -1,0 +1,48 @@
+.center-div {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.field-search-form {
+  width: 100%;
+}
+
+.full-width-padded {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.form-control {
+  border-radius: 3px;
+  color: $my-gray;
+  background-color: white;
+  outline: none;
+}
+
+.color-dark {
+  color: $my-gray;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.align-flex-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.side-margin-small {
+  margin: 0px 4px;
+}
+
+.border-radious-small {
+  border-radius: 4px;
+}
