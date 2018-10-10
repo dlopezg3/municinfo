@@ -1,0 +1,25 @@
+<form action="/municipios" method="get">
+  <div class="flex align-flex-end justify-center">
+    <div class="grid side-margin-small">
+      <input name="search[departamento]" id="departamento" list="departamentos" placeholder="Departamento" class="color-dark" />
+    </div>
+
+    <!-- Para incluir municipio en el formulario de busqueda -->
+
+
+<!--     <div class="grid side-margin-small">
+      <input name="search[municipio]" id="municipio" list="municipios" placeholder="Municipio" class="color-dark"/>
+    </div>
+ -->
+
+    <div class="button side-margin-small">
+      <button type="submit" class="btn-primary border-radious-small">Buscar</button>
+    </div>
+  </div>
+</form>
+
+<datalist id="departamentos">
+  <% departamentos.each do |depto| %>
+    <option value=<%= depto.nombre.titleize %> > </option>
+  <% end %>
+</datalist>
