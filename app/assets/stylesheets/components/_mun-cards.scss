@@ -1,0 +1,53 @@
+.card-container {
+  border: 1px black solid;
+  background-color: $my-dark-gray;
+  border-radius: 6px;
+  color: white;
+  height: 180px;
+  width: 100%;
+  margin-top: 15px
+}
+
+.card-name {
+}
+
+.font-weight-big {
+  font-weight: 800;
+}
+
+.font-size-big {
+  font-size: 24px;
+}
+
+.font-size-small {
+  font-size: small;
+}
+
+.font-size-x-small {
+  font-size: x-small;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-top {
+  top: 15px;
+}
+
+.position-left {
+  left: 0;
+}
+
+.position-bottom {
+  bottom: 0;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.card-row {
+  width: 90%
+}
+
