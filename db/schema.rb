@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_21_233526) do
+ActiveRecord::Schema.define(version: 2018_10_10_204936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_09_21_233526) do
     t.string "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "value_centavos", default: 0, null: false
     t.index ["municipio_id"], name: "index_deudas_on_municipio_id"
   end
 
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 2018_09_21_233526) do
     t.string "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "value_centavos", default: 0, null: false
     t.index ["municipio_id"], name: "index_gastos_on_municipio_id"
   end
 
@@ -45,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_09_21_233526) do
     t.string "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "value_centavos", default: 0, null: false
     t.index ["municipio_id"], name: "index_ingresos_on_municipio_id"
   end
 
@@ -61,6 +64,7 @@ ActiveRecord::Schema.define(version: 2018_09_21_233526) do
     t.bigint "municipio_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "value"
     t.index ["municipio_id"], name: "index_poblacions_on_municipio_id"
   end
 

@@ -1,7 +1,11 @@
-<ol>
-  <% @municipios.each do |mun| %>
-      <li>
-        <%= mun.nombre.titleize %>
-      </li>
-  <% end %>
-</ol>
+<div class="container">
+  <div class="cards-contaier">
+    <div class="row">
+      <% @municipios.each do |mun| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <%= render 'shared/mun-cards', mun: mun %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
